@@ -14,6 +14,7 @@
     <modules>
         <module>quick-start</module>
         <module>jpa-standard-api</module>
+        <module>envers</module>
     </modules>
 
     <properties>
