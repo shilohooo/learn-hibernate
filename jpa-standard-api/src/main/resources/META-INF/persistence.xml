@@ -1,0 +1,31 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+<!--    每个持久化单元必须指定一个唯一的名称，该名称用于引用配置-->
+    <persistence-unit name="org.shiloh.jpa">
+        <description>
+            Hibernate 入门：JPA 持久化单元
+        </description>
+
+        <!--        注册实体类-->
+        <class>org.shiloh.entity.Event</class>
+
+        <properties>
+            <!--            数据库连接配置-->
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost:13306/learn_hibernate?useSSL=false&amp;serverTimezone=Asia/Shanghai&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="123456"/>
+
+            <!--            自动创建表、更新表结构-->
+            <property name="jakarta.persistence.schema-generation.database.action" value="none"/>
+
+            <!--            SQL 打印配置-->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.highlight_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
